@@ -1,0 +1,34 @@
+openapi: 3.0.2
+info:
+  version: 1.0.0
+  title: sfs-openapi
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  description:
+    "This is the OpenAPI Specification for SFS. It is used to store common definitions that are used across multiple APIs and to generate documentation for those APIs by using URL references.
+
+    It is structured as follows:
+    - components/schemas: Contains the common schemas that are used across multiple APIs.
+    - components/responses: Contains the common responses that are used across multiple APIs.
+    - components/parameters: Contains the common parameters that are used across multiple APIs."
+servers:
+  - url: https://localhost:8080
+    description: Local server
+  - url: https://sfs-openapi.staging.spendesk-bank.services
+    description: Staging server (development)
+  - url: https://sfs-openapi.qa.spendesk-bank.services
+    description: QA server (stable release)
+  - url: https://sfs-openapi.spendesk-bank.com/v1
+    description: 'Production server (latest release)'
+paths: {}
+components:
+  schemas:
+    Command:
+      $ref: components/schemas/Command.yaml
+    OutcomeSuccess:
+      $ref: components/schemas/OutcomeSuccess.yaml
+    OutcomeFailure:
+      $ref: components/schemas/OutcomeFailure.yaml
+    AcceptedCurrency:
+      $ref: components/schemas/AcceptedCurrency.yaml

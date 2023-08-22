@@ -1,0 +1,12 @@
+required:
+  - commandId
+  - parentCommandId
+properties:
+  commandId:
+    type: string
+    format: uuid
+    description: A unique identifier for this request. It is used as an idempotency key.
+  parentCommandId:
+    description: Reference this command to a previous related command Id, otherwise send NONE
+    example: 'NONE'
+    type: string
